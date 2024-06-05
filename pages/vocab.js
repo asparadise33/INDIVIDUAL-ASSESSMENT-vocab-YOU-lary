@@ -9,9 +9,6 @@ const emptycards = () => {
 const showCards = (array) => {
   clearDom();
 
-  const btnString = '<button class="btn btn-success btn-lg mb-4" id="add-book-btn">Create an Entry</button>';
-  renderToDOM('#add-button', btnString);
-
   let domString = '';
   array.forEach((item) => {
     domString += `
@@ -21,8 +18,8 @@ const showCards = (array) => {
           <h6 class="card-description">${item.description}</h6>
             <p class="card-text bold">${item.category ? `<span class="badge badge-info sale-badge"><i class="fa fa-bell" aria-hidden="true"></i>Category</span> $${item.language}` : `$${item.tech}`}</p>
             <hr>
-            <i id="edit-book-btn--${item.firebaseKey}" class="fas fa-edit btn btn-info">Edit</i>
-            <i id="delete-book-btn--${item.firebaseKey}" class="btn btn-danger fas fa-trash-alt">Delete</i>
+            <i id="edit-card-btn--${item.firebaseKey}" class="fas fa-edit btn btn-info">Edit</i>
+            <i id="delete-card-btn--${item.firebaseKey}" class="btn btn-danger fas fa-trash-alt">Delete</i>
         </div>
       </div>`;
   });
