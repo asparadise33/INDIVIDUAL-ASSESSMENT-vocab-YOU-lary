@@ -13,22 +13,17 @@ const navBar = () => {
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item active">
               <a class="nav-link" href="#" id="all-cards">
-                All Cards <span class="sr-only">(current)</span>
+                Vocab Cards <span class="sr-only">(current)</span>
               </a>
             </li>
           <li class="nav-item">
-          <a class="nav-link active" aria-current="page" Id="add-entry"
-          href="#">Create Entry</a>
-        </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" id="v-cards">Vocab cards</a>
-            </li>
+          <button class="nav-link active" aria-current="page" Id="add-entry"
+          href="#">Create Entry</button>
             <li class="nav-item">
               <a class="nav-link" href="#" id="filter-category">Filter Category</a>
             </li>
           </ul>
           <span class="navbar-text">
-          <div id="add-button"></div>
           <div id="logout-button"></div>
           </span>
         </div>
