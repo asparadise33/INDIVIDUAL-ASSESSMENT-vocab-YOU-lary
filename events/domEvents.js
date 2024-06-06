@@ -1,4 +1,4 @@
-// import addVocabCard from '../components/form/addVocabCardForm';
+import addVocabCard from '../components/form/addVocabCardForm';
 import { getCards, deleteCard } from '../api/vocabData';
 import { showCards } from '../pages/vocab';
 
@@ -16,10 +16,10 @@ const domEvents = () => {
       }
     }
 
-    // if (e.target.id.includes('add-card-btn')) {
-    //   addVocabCard();
-    //   console.warn('ADD CARD');
-    // }
+    if (e.target.id.includes('add-card-btn')) {
+      addVocabCard();
+      console.warn('ADD CARD');
+    }
 
     // if (e.target.id.includes('edit-book-btn')) {
     // const [, firebaseKey] = e.target.id.split('--');
