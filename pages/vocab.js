@@ -12,14 +12,14 @@ const showCards = (array) => {
   let domString = '';
   array.forEach((item) => {
     domString += `
-      <div class="card"style="height: 400px;">
+      <div class="card"style="height: 300px;">
         <div class="card-body" style="height: 180px;">
           <h5 class="card-title">${item.title}</h5>
-          <h6 class="card-description">${item.description}</h6>
-            <p class="card-text bold">${item.category ? `<span class="badge badge-info sale-badge"><i class="fa fa-bell" aria-hidden="true"></i>Category</span> $${item.language}` : `$${item.tech}`}</p>
+          <p class="card-description">${item.description}</p>
+            <p class="card-text bold">${item.category ? `<span class="badge badge-info category-badge"><i class="fa fa-book" aria-hidden="true"></i>Category</span> ${item.language}` : `${item.tech}`}</p>
             <hr>
-            <i id="edit-card-btn--${item.firebaseKey}" class="fas fa-edit btn btn-info">Edit</i>
-            <i id="delete-card-btn--${item.firebaseKey}" class="btn btn-danger fas fa-trash-alt">Delete</i>
+            <button id="edit-card-btn--${item.firebaseKey}" class="fas fa-edit btn btn-info">Edit</button>
+            <button id="delete-card-btn--${item.firebaseKey}" class="btn btn-danger fas fa-trash-alt">Delete</button>
         </div>
       </div>`;
   });
