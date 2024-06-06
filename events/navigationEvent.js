@@ -1,4 +1,4 @@
-import getCards from '../api/vocabData';
+import { getCards } from '../api/vocabData';
 import { showCards } from '../pages/vocab';
 // import createButton from '../components/buttons/createCardButton';
 import { signOut } from '../utils/auth';
