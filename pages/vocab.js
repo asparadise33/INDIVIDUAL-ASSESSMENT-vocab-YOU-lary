@@ -21,8 +21,8 @@ const showCards = (array) => {
           <p class="card-description">${item.description}</p>
             <p class="card-text bold">${item.category ? `<span class="badge badge-info category-badge"><i class="fa fa-book" aria-hidden="true"></i>Category</span> ${item.language}` : `${item.tech}`}</p>
             <hr>
-            <i id="edit-card-btn--${item.firebaseKey}" class="fas fa-edit btn btn-info">Edit</i>
-            <i id="delete-card-btn--${item.firebaseKey}" class="btn btn-danger fas fa-trash-alt">Delete</i>
+            <button id="edit-card-btn--${item.firebaseKey}" class="btn btn-link">Edit</button>
+            <button id="delete-card-btn--${item.firebaseKey}" class="btn btn-link">Delete</button>
         </div>
       </div>`;
   });
