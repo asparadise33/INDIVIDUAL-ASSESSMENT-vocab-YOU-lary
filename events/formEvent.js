@@ -20,6 +20,19 @@ const formEvents = () => {
       });
       console.warn('CLICKED SUBMIT CARD', e.target.id);
     }
+    if (e.target.id.includes('update-card')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      const payload = {
+        title: document.querySelector('#title').value,
+        description: document.querySelector('#description').value,
+        category: document.querySelector('#category').value,
+        firebaseKey,
+      };
+
+      updateCard(payload).then(() => {
+        getCards().then(showCards);
+      });
+    }
   });
 };
 
