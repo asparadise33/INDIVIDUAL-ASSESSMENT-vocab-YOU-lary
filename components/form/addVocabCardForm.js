@@ -17,6 +17,10 @@ const addVocabCard = (obj = {}) => {
         <label for="category">Cateory: Language or Tech?</label>
         <input type="text" class="form-control" id="category" placeholder="Card Category" value="${obj.category || ''}" required>
       </div>
+      <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="tech" ${obj.tech ? 'checked' : ''}>
+      <label class="form-check-label" for="tech">Tech?</label>
+    </div>
       </div>
       <button type="submit" class="btn btn-primary">Submit card</button>
     </form>`;
