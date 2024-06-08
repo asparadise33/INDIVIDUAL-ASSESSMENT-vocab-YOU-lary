@@ -17,7 +17,7 @@ const navBar = () => {
               </a>
             </li>
           <li class="nav-item">
-          <button class="nav-link active" aria-current="page" Id="add-entry"
+          <button class="nav-link active" aria-current="page" id="add-entry"
           href="#">Create Entry</button>
             <li class="nav-item">
               <a class="nav-link" href="#" id="filter-category">Filter Category</a>

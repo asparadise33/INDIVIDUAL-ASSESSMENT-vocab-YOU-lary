@@ -1,8 +1,9 @@
 import { getCards, filterCards } from '../api/vocabData';
+import addVocabCard from '../components/form/addVocabCardForm';
 import { showCards } from '../pages/vocab';
 import { signOut } from '../utils/auth';
 
-const navigationEvents = () => {
+const navigationEvents = (user) => {
   // LOGOUT BUTTON
   document.querySelector('#logout-button')
     .addEventListener('click', signOut);
@@ -11,8 +12,12 @@ const navigationEvents = () => {
     getCards().then(showCards);
   });
 
+  document.querySelector('#add-entry').addEventListener('click', () => {
+    addVocabCard();
+  });
+
   document.querySelector('#filter-category').addEventListener('click', () => {
-    filterCards().then(showCards);
+    filterCards(user.uid).then(showCards);
   });
 };
 

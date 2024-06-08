@@ -64,15 +64,19 @@ const getSingleCard = (firebaseKey) => new Promise((resolve, reject) => {
     .then((data) => resolve(data)) // will resolve a single object
     .catch(reject);
 });
-const filterCards = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/vocabCards.json?orderBy="category"&equalTo="tech"`, {
+const filterCards = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocabCards.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
   })
     .then((response) => response.json())
-    .then((data) => resolve(Object.values(data)))
+    .then((data) => {
+      const cardCategory = Object.values(data).filter((item) => item.category === 'tech');
+      console.warn(data);
+      resolve(cardCategory);
+    })
     .catch(reject);
 });
 export {
