@@ -63,7 +63,7 @@ const getSingleCard = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 const filterCards = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/vocabCards.json?orderBy="tech"&equalTo=true`, {
+  fetch(`${endpoint}/vocabCards.json?orderBy="category"&equalTo="tech"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
