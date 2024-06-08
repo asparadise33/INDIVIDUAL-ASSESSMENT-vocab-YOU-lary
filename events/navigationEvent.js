@@ -1,6 +1,5 @@
-import { getCards } from '../api/vocabData';
+import { getCards, filterCards } from '../api/vocabData';
 import { showCards } from '../pages/vocab';
-// import createButton from '../components/buttons/createCardButton';
 import { signOut } from '../utils/auth';
 
 const navigationEvents = () => {
@@ -8,11 +7,12 @@ const navigationEvents = () => {
   document.querySelector('#logout-button')
     .addEventListener('click', signOut);
 
-  // document.querySelector('#add-button')
-  //   .addEventListener('click', createButton);
-
   document.querySelector('#all-cards').addEventListener('click', () => {
     getCards().then(showCards);
+  });
+
+  document.querySelector('#filter-category').addEventListener('click', () => {
+    filterCards().then(showCards);
   });
 };
 

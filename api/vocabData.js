@@ -62,7 +62,17 @@ const getSingleCard = (firebaseKey) => new Promise((resolve, reject) => {
     .then((data) => resolve(data)) // will resolve a single object
     .catch(reject);
 });
-
+const filterCards = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocabCards.json?orderBy="tech"&equalTo=true`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(Object.values(data)))
+    .catch(reject);
+});
 export {
-  getCards, deleteCard, createCard, updateCard, getSingleCard
+  getCards, deleteCard, createCard, updateCard, getSingleCard, filterCards
 };

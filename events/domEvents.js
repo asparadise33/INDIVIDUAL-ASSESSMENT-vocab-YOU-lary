@@ -25,7 +25,7 @@ const domEvents = () => {
       const [, firebaseKey] = e.target.id.split('--');
 
       getSingleCard(firebaseKey).then((bookObj) => addVocabCard(bookObj));
-      console.warn('EDIT BOOK', e.target.id);
+      console.warn('EDIT CARD', e.target.id);
     }
   });
 };
