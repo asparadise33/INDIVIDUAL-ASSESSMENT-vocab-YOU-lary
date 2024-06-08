@@ -2,8 +2,8 @@ import client from '../utils/client';
 
 const endpoint = client.databaseURL;
 
-const getCards = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/vocabCards.json`, {
+const getCards = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocabCards.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -25,13 +25,15 @@ const deleteCard = (firebaseKey) => new Promise((resolve, reject) => {
     .then((data) => resolve(data))
     .catch(reject);
 });
-const createCard = (payload) => new Promise((resolve, reject) => {
+const createCard = (payload, uid) => new Promise((resolve, reject) => {
+  console.warn(uid);
+  const payload2 = { ...payload, uid };
   fetch(`${endpoint}/vocabCards.json`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(payload),
+    body: JSON.stringify(payload2),
   })
     .then((response) => response.json())
     .then((data) => resolve(data))

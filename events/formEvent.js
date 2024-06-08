@@ -1,7 +1,8 @@
 import { createCard, getCards, updateCard } from '../api/vocabData';
 import { showCards } from '../pages/vocab';
 
-const formEvents = () => {
+const formEvents = (user) => {
+  console.warn(user);
   document.querySelector('#main-container').addEventListener('submit', (e) => {
     e.preventDefault();
     if (e.target.id.includes('submit-card')) {
@@ -11,11 +12,11 @@ const formEvents = () => {
         category: document.querySelector('#category').value,
       };
 
-      createCard(payload).then(({ name }) => {
+      createCard(payload, user.uid).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
 
         updateCard(patchPayload).then(() => {
-          getCards().then(showCards);
+          getCards(user.uid).then(showCards);
         });
       });
       console.warn('CLICKED SUBMIT CARD', e.target.id);
