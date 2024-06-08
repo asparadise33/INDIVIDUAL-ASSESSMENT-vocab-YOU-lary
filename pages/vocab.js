@@ -19,7 +19,7 @@ const showCards = (array) => {
         <div class="card-body" style="height: 180px;">
           <h5 class="card-title">${item.title}</h5>
           <p class="card-description">${item.description}</p>
-            <p class="card-text bold">${item.tech ? `<span class="badge badge-info category-badge"><i class="fa fa-book" aria-hidden="true"></i> Tech</span> ${item.category}` : `${item.category}`}</p>
+            <p class="card-text bold">${item.category}<span class="badge badge-info category-badge"><i class="fa fa-book" aria-hidden="true"></i> Tech</span></p>
             <hr>
             <button id="edit-card-btn--${item.firebaseKey}" class="btn btn-link">Edit</button>
             <button id="delete-card-btn--${item.firebaseKey}" class="btn btn-link">Delete</button>
