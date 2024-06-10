@@ -12,11 +12,11 @@ const showCards = (array) => {
   let domString = '';
   array.forEach((item) => {
     domString += `
-      <div class="card"style="height: 300px;">
-        <div class="card-body" style="height: 180px;">
+      <div class="card">
+        <div class="card-body">
           <h5 class="card-title">${item.title}</h5>
-          <p class="card-description">${item.description}</p>
-            <p class="card-text bold">${item.category}<span class="badge badge-info category-badge"><i class="fa fa-book" aria-hidden="true"></i> Tech</span></p>
+          <h6 class="card-description">${item.description}</h6>
+            <p class="card-text bold"><span class="badge badge-info category-badge"><i class="fa fa-book" aria-hidden="true"></i> Category:</span>${item.category}</p>
             <hr>
             <button id="edit-card-btn--${item.firebaseKey}" class="btn btn-link">Edit</button>
             <button id="delete-card-btn--${item.firebaseKey}" class="btn btn-link">Delete</button>

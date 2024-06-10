@@ -9,7 +9,7 @@ const navigationEvents = (user) => {
     .addEventListener('click', signOut);
 
   document.querySelector('#all-cards').addEventListener('click', () => {
-    getCards().then(showCards);
+    getCards(user.uid).then(showCards);
   });
 
   document.querySelector('#add-entry').addEventListener('click', () => {
